@@ -1,2 +1,2 @@
-# Larning path Cpp
+# Learning path Cpp
  C++ learning repo
