@@ -38,6 +38,10 @@ void printArrayOfPoints(const Point *points, const int size);
 // * FUNCTIONS
 // Function to print the 3 parameters passed to it
 void printWithDefaultParams(int a, int b = 10, int c = 20);
+void valueAndReference(int a, int &b);
+void overCharge(int a, int b, int c);
+void overCharge(int a, int b);
+void overCharge(float a);
 // * FUNCTIONS
 // * --------------------
 
