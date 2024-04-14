@@ -1,21 +1,32 @@
 #include <iostream>
 #include <cstdlib>
 #include <vector>
-// UNIT 1
+// -----
 #include <unit1.h>
+#include <unit2.h>
 
-// UNIT 2
+void unitOneImplementation();
 
 using namespace std;
 
 int main()
 {
   // * UNIT 1
+  unitOneImplementation();
+
+  // * UNIT 2
+
+  return 0;
+}
+
+void unitOneImplementation()
+{
   // ? ARRAYS
   int arr[] = {10, 11, 12, 23, 14, 15};
-  cout << "sizeof(arr): " << sizeof(arr) / sizeof(int) << endl;
-  printArray(arr, sizeof(arr) / sizeof(int));
-  findMax(arr, sizeof(arr) / sizeof(int));
+  const int size = sizeof(arr) / sizeof(int);
+  cout << "sizeof(arr): " << size << endl;
+  printArray(arr, size);
+  findMax(arr, size);
 
   // ? STRUCUTRES
   Point p1 = {1, 2}, p2 = {4, 6};
@@ -24,14 +35,17 @@ int main()
   distance(p1, p2);
 
   // ? STRUCUTRES AND ARRAYS
-  Point points[] = {{x: 1, y: 2}, {4, 6}, {7, 8}};
+  Point points[] = {{x : 1, y : 2}, {4, 6}, {7, 8}};
   printArrayOfPoints(points, sizeof(points) / sizeof(Point));
 
   // ? FUNCTIONS
   printWithDefaultParams(1);
 
-  // * UNIT 2
+  int value = 1, reference = 2;
+  valueAndReference(value, reference);
+  cout << "value: " << value << ", reference: " << reference << endl;
 
-
-  return 0;
+  overCharge(1, 2, 3);
+  overCharge(1, 2);
+  overCharge(1.4);
 }
