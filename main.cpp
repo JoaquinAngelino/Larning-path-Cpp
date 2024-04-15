@@ -6,15 +6,19 @@
 #include <unit2.h>
 
 void unitOneImplementation();
+void unitTwoImplementation();
 
 using namespace std;
 
 int main()
 {
   // * UNIT 1
-  unitOneImplementation();
+  // unitOneImplementation();
+  // unitOneExercises();
 
   // * UNIT 2
+  unitTwoImplementation();
+  // unitTwoExercises();
 
   return 0;
 }
@@ -48,4 +52,10 @@ void unitOneImplementation()
   overCharge(1, 2, 3);
   overCharge(1, 2);
   overCharge(1.4);
+}
+
+void unitTwoImplementation()
+{
+  referenceAndPointer();
+
 }
