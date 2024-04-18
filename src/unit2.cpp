@@ -6,7 +6,7 @@ using namespace std;
 // * '&' AND '*' OPERATOR
 void referenceAndPointer()
 {
-    cout << endl << "--- referenceAndPointer ---" << endl;
+    cout << "\n--- referenceAndPointer ---" << endl;
     int value = 10;
     int &reference = value;
     int *pointer = &value;
@@ -37,7 +37,7 @@ void referenceAndPointer()
 // * POINTERS TO ARRAYS AND STRUCTS
 void printArrayOfStructs()
 {
-    cout << endl << "--- printArrayOfStructs ---" << endl;
+    cout << "\n--- printArrayOfStructs ---" << endl;
     Person *people = new Person[2]; // Asignación dinámica, arreglo de dos estructuras
     people[0] = {"Alice", 28};
     people[1] = {"Carlos", 35};
