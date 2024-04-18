@@ -11,4 +11,8 @@ struct Person
 
 void referenceAndPointer();
 
-#endif // UNIT1_H
+void printArrayOfStructs();
+
+void execFunctionWithPtr();
+
+#endif // UNIT2_H

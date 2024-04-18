@@ -53,3 +53,23 @@ void printArrayOfStructs()
 }
 // * POINTERS TO ARRAYS AND STRUCTS
 // * --------------------
+
+// * --------------------
+// * POINTERS TO FUNCTIONS
+int plusOne(int x);
+
+int plusOne(int x){
+    return x + 1;
+}
+
+void execFunctionWithPtr()
+{
+    cout << "\n--- execFunctionWithPtr ---" << endl;
+
+    int (*ptr)(int) = plusOne;
+
+    cout << ptr(4) << endl;
+    cout << "---" << endl;
+}
+// * POINTERS TO FUNCTIONS
+// * --------------------
