@@ -56,6 +56,13 @@ void unitOneImplementation()
 
 void unitTwoImplementation()
 {
+  // ? POINTERS
   referenceAndPointer();
+
+  // ? POINTERS TO ARRAYS AND STRUCTS
+  printArrayOfStructs();
+
+  //? POINTERS TO FUNCTIONS
+  execFunctionWithPtr();
 
 }
