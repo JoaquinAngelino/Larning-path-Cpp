@@ -65,4 +65,6 @@ void unitTwoImplementation()
   //? POINTERS TO FUNCTIONS
   execFunctionWithPtr();
 
+  functionAsArgument(plusOne);
+
 }

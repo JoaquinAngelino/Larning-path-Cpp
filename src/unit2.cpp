@@ -56,7 +56,6 @@ void printArrayOfStructs()
 
 // * --------------------
 // * POINTERS TO FUNCTIONS
-int plusOne(int x);
 
 int plusOne(int x){
     return x + 1;
@@ -68,7 +67,15 @@ void execFunctionWithPtr()
 
     int (*ptr)(int) = plusOne;
 
-    cout << ptr(4) << endl;
+    cout << "executing plusOne with ptr(4) -> " << ptr(4) << endl;
+    cout << "---" << endl;
+}
+
+void functionAsArgument(int (*ptr)(int))
+{
+    cout << "\n--- functionAsArgument ---" << endl;
+
+    cout << "executing function as argument: ptr(10) -> " << ptr(10) << endl;
     cout << "---" << endl;
 }
 // * POINTERS TO FUNCTIONS

@@ -15,4 +15,10 @@ void printArrayOfStructs();
 
 void execFunctionWithPtr();
 
+void functionAsArgument(int (*)(int));
+
+
+// UTILS
+int plusOne(int x);
+
 #endif // UNIT2_H
