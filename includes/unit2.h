@@ -19,6 +19,6 @@ void functionAsArgument(int (*)(int));
 
 
 // UTILS
-int plusOne(int x);
+int plusOne(int);
 
 #endif // UNIT2_H
