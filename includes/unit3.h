@@ -5,6 +5,8 @@
 
 // * RECURSIVE FUNCTIONS 
 int factorial(int);
+
+void reversePrint(const char *);
 // * RECURSIVE FUNCTIONS 
 
 #endif // UNIT3_H
