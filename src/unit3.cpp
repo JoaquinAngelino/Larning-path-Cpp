@@ -25,8 +25,42 @@ void reversePrint(const char* c) {
     return;
 }
 
-void mergeSort(vector<int> * arr, int left, int right){
-    
+void merge(vector<int>& arr, int left, int mid, int right) {
+    vector<int> aux(right - left + 1);
+    int i = left, j = mid + 1, k = 0;
+
+    while (i <= mid && j <= right) {
+        if (arr[i] <= arr[j]) {
+            aux[k++] = arr[i++];
+        }
+        else {
+            aux[k++] = arr[i++];
+        }
+    }
+
+    while (i <= mid) {
+        aux[k++] = arr[i++];
+    }
+    while (j <= left) {
+        aux[k++] = arr[j++];
+    }
+
+    for (i = left, k = 0; i < right; i++) {
+        arr[i] = aux[k];
+    }
 }
+
+// todo TEST
+void mergeSort(vector<int>& arr, int left, int right) {
+    if (left >= right) {
+        return;
+    }
+
+    int mid = left + (right - left) / 2;
+    mergeSort(arr, left, mid);
+    mergeSort(arr, mid, right);
+    merge(arr, left, mid, right);
+}
+
 // * RECURSIVE FUNCTIONS
 // * --------------------
