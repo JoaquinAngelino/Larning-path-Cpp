@@ -82,4 +82,16 @@ void unitThreeImplementation() {
   reversePrint(str);
   cout << endl;
 
+  vector<int> v = { 0, 1, 2, 3, 10 , 5, 11,6,12,7,13,8 ,14,9 };
+
+  for (int val : v) {
+    std::cout << val << " ";
+  }
+  cout << endl;
+
+  mergeSort(v, 0, v.size() - 1);
+
+  for (int val : v) {
+    std::cout << val << " ";
+  }
 };

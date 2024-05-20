@@ -34,23 +34,22 @@ void merge(vector<int>& arr, int left, int mid, int right) {
             aux[k++] = arr[i++];
         }
         else {
-            aux[k++] = arr[i++];
+            aux[k++] = arr[j++];
         }
     }
 
     while (i <= mid) {
         aux[k++] = arr[i++];
     }
-    while (j <= left) {
+    while (j <= right) {
         aux[k++] = arr[j++];
     }
 
-    for (i = left, k = 0; i < right; i++) {
+    for (i = left, k = 0; i <= right; i++, k++) {
         arr[i] = aux[k];
     }
 }
 
-// todo TEST
 void mergeSort(vector<int>& arr, int left, int right) {
     if (left >= right) {
         return;
@@ -58,7 +57,7 @@ void mergeSort(vector<int>& arr, int left, int right) {
 
     int mid = left + (right - left) / 2;
     mergeSort(arr, left, mid);
-    mergeSort(arr, mid, right);
+    mergeSort(arr, mid + 1, right);
     merge(arr, left, mid, right);
 }
 
