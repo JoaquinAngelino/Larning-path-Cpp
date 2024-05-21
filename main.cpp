@@ -5,10 +5,12 @@
 #include <unit1.h>
 #include <unit2.h>
 #include <unit3.h>
+#include <unit4.h>
 
 void unitOneImplementation();
 void unitTwoImplementation();
 void unitThreeImplementation();
+void unitFourImplementation();
 
 using namespace std;
 
@@ -23,8 +25,11 @@ int main()
   // unitTwoExercises();
 
   // * UNIT 3
-  unitThreeImplementation();
+  // unitThreeImplementation();
   // unitThreeExercises();
+
+  // * UNIT 4
+  unitFourImplementation();
 
   return 0;
 }
@@ -95,3 +100,11 @@ void unitThreeImplementation() {
     std::cout << val << " ";
   }
 };
+
+void unitFourImplementation() {
+  cout << "UNIT 4\n";
+  cout << "Person class\n";
+
+  Person person = new Person();
+
+}
