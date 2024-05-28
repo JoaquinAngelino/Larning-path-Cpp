@@ -5,7 +5,7 @@
 #include <unit1.h>
 #include <unit2.h>
 #include <unit3.h>
-#include <unit4.h>
+#include <unit4n5.h>
 
 void unitOneImplementation();
 void unitTwoImplementation();
@@ -90,21 +90,31 @@ void unitThreeImplementation() {
   vector<int> v = { 0, 1, 2, 3, 10 , 5, 11,6,12,7,13,8 ,14,9 };
 
   for (int val : v) {
-    std::cout << val << " ";
+    cout << val << " ";
   }
   cout << endl;
 
   mergeSort(v, 0, v.size() - 1);
 
   for (int val : v) {
-    std::cout << val << " ";
+    cout << val << " ";
   }
 };
 
 void unitFourImplementation() {
   cout << "UNIT 4\n";
-  cout << "Person class\n";
+  cout << "Inheritance\n";
+  const char* name = "Joxquin";
+  Vehicle vehicle(29, name);
+  Car* car = new Car(28, name, 1000);
+  Vehicle* vehicle2 = car;
 
-  Person person = new Person();
+  vehicle.showData();
+  car->showData();
+
+  delete car;
+  cout << "----------------\n";
+  cout << "Polymorphism\n";
+
 
 }
