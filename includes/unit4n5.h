@@ -3,6 +3,7 @@
 
 #include <string.h>
 #include <iostream>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -122,4 +123,44 @@ void presentStudent(const Student* s) {
     cout << "Hi, My name is " << s->name << " & my note is " << s->note << "\n";
 }
 
+// COMPOSITION
+class Dot {
+private:
+    int x;
+    int y;
+public:
+    Dot(const int x, const int y) : x(x), y(y) {};
+
+    void print() const {
+        cout << "X: " << x << ", Y: " << y << "\n";
+    };
+    int getX() { return x; };
+    int getY() { return y; };
+};
+
+class Rectangle {
+private:
+    Dot* a;
+    Dot* b;
+public:
+    void print() {
+        for (int i = 0; i < abs(a->getX() - b->getX()); i++) {
+            cout << "#";
+            for (int i = 0; i < abs(a->getY() - b->getY()); i++) {
+                cout << '#';
+            }
+            cout << "\n";
+        }
+    };
+
+    Rectangle(int x1, int y1, int x2, int y2) {
+        a = new Dot(x1, y1);
+        b = new Dot(x2, y2);
+    }
+
+    ~Rectangle() {
+        delete a;
+        delete b;
+    };
+};
 #endif

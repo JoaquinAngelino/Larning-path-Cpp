@@ -131,6 +131,12 @@ void unitFourImplementation() {
 
   teacher.getStudentNote(&student);
 
-  cout<< "The function presentStudent() also can access the student private attibutes\n";
+  cout << "The function presentStudent() also can access the student private attibutes\n";
   presentStudent(&student);
+
+  cout << "\n----------------\n" << "Composition\n" << "----------------\n";
+  cout << "A class Rectangle is composed by Points\n";
+
+  Rectangle rectangle(2, 1, 6, 19);
+  rectangle.print();
 }
