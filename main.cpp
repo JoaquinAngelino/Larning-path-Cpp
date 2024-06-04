@@ -104,14 +104,16 @@ void unitThreeImplementation() {
 void unitFourImplementation() {
   cout << "UNIT 4\n";
   cout << "----------------\n" << "Inheritance\n" << "----------------\n";
-  const char* name = "Joxquin";
-  Vehicle vehicle(29, name);
-  Car* car = new Car(28, name, 1000);
+  {
+    const char* name = "Joxquin";
+    Vehicle vehicle(29, name);
+    Car* car = new Car(28, name, 1000);
 
-  vehicle.showData();
-  car->showData();
+    vehicle.showData();
+    car->showData();
 
-  delete car;
+    delete car;
+  }
   cout << "\n----------------\n" << "Polymorphism\n" << "----------------\n";
   cout << "Animal is an abstract class that can be used to implement polymorphism\n";
   Dog dog;
@@ -139,4 +141,31 @@ void unitFourImplementation() {
 
   Rectangle rectangle(2, 1, 6, 19);
   rectangle.print();
+
+  cout << "\n----------------\n" << "List & trees\n" << "----------------\n";
+  cout << "\n";
+
+  List* l = new List();
+
+  l->remove(1);
+  l->add(1);
+  l->add(2);
+  l->add(3);
+  l->add(4);
+  l->add(5);
+  l->add(6);
+  l->add(7);
+
+  l->print();
+  l->remove(2);
+  l->print();
+  l->remove(2);
+  l->print();
+  l->remove(6);
+  l->print();
+  l->remove(7);
+  l->print();
+  l->remove(1);
+  l->print();
+
 }

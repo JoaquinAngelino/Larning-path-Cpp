@@ -163,4 +163,88 @@ public:
         delete b;
     };
 };
+
+// LIST & TREE
+class Node {
+private:
+    int data;
+    Node* next;
+public:
+    Node(int x) : data(x), next(nullptr) {}
+
+    int getData() { return data; }
+    Node* getNext() { return next; }
+    void setNext(Node* n) { next = n; }
+};
+
+class List {
+private:
+    Node* head;
+public:
+    List() :head(nullptr) {}
+
+    bool remove(int x) {
+        if (!head) { return false; }
+
+        if (head->getData() == x) {
+            Node* temp = head->getNext();
+            delete head;
+            head = temp;
+            return true;
+        }
+
+        Node* aux = head;
+        Node* seeker = head->getNext();
+
+        while (seeker && seeker->getData() != x) {
+            aux = seeker;
+            seeker = seeker->getNext();
+        }
+
+        if (!seeker) { return false; }
+
+        aux->setNext(seeker->getNext());
+        delete seeker;
+        return true;
+    }
+
+    void add(int x) {
+        Node* newNode = new Node(x);
+        if (!head) {
+            head = newNode;
+            return;
+        }
+
+        Node* last = head;
+
+        while (last->getNext()) {
+            last = last->getNext();
+        }
+
+        last->setNext(newNode);
+    }
+
+    void print() {
+        if (!head) {
+            cout << "Empty LIST\n";
+            return;
+        }
+
+        Node* aux = head;
+        while (aux) {
+            cout << aux->getData() << " ";
+            aux = aux->getNext();
+        }
+        cout << endl;
+    }
+
+    ~List() {
+        while (head) {
+            Node* temp = head;
+            head = head->getNext();
+            delete temp;
+        }
+    }
+};
+
 #endif
