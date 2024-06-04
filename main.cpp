@@ -155,7 +155,6 @@ void unitFourImplementation() {
   l->add(5);
   l->add(6);
   l->add(7);
-
   l->print();
   l->remove(2);
   l->print();
@@ -168,4 +167,18 @@ void unitFourImplementation() {
   l->remove(1);
   l->print();
 
+  Tree* t = new Tree();
+
+  t->add(10);
+  t->add(5);
+  t->add(7);
+  t->add(8);
+  t->add(6);
+  t->add(9);
+  t->add(1);
+  t->add(2);
+  t->add(3);
+  t->add(4);
+  t->add(5);
+  t->print();
 }

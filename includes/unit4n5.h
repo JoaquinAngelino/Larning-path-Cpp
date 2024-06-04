@@ -165,21 +165,21 @@ public:
 };
 
 // LIST & TREE
-class Node {
+class ListNode {
 private:
     int data;
-    Node* next;
+    ListNode* next;
 public:
-    Node(int x) : data(x), next(nullptr) {}
+    ListNode(int x) : data(x), next(nullptr) {}
 
     int getData() { return data; }
-    Node* getNext() { return next; }
-    void setNext(Node* n) { next = n; }
+    ListNode* getNext() { return next; }
+    void setNext(ListNode* n) { next = n; }
 };
 
 class List {
 private:
-    Node* head;
+    ListNode* head;
 public:
     List() :head(nullptr) {}
 
@@ -187,14 +187,14 @@ public:
         if (!head) { return false; }
 
         if (head->getData() == x) {
-            Node* temp = head->getNext();
+            ListNode* temp = head->getNext();
             delete head;
             head = temp;
             return true;
         }
 
-        Node* aux = head;
-        Node* seeker = head->getNext();
+        ListNode* aux = head;
+        ListNode* seeker = head->getNext();
 
         while (seeker && seeker->getData() != x) {
             aux = seeker;
@@ -209,13 +209,13 @@ public:
     }
 
     void add(int x) {
-        Node* newNode = new Node(x);
+        ListNode* newNode = new ListNode(x);
         if (!head) {
             head = newNode;
             return;
         }
 
-        Node* last = head;
+        ListNode* last = head;
 
         while (last->getNext()) {
             last = last->getNext();
@@ -230,7 +230,7 @@ public:
             return;
         }
 
-        Node* aux = head;
+        ListNode* aux = head;
         while (aux) {
             cout << aux->getData() << " ";
             aux = aux->getNext();
@@ -240,11 +240,54 @@ public:
 
     ~List() {
         while (head) {
-            Node* temp = head;
+            ListNode* temp = head;
             head = head->getNext();
             delete temp;
         }
     }
 };
 
+struct TreeNode {
+    int val;
+    TreeNode* right;
+    TreeNode* left;
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+};
+
+class Tree {
+private:
+    TreeNode* head;
+    TreeNode* nodeInsert(TreeNode* node, int x) {
+        if (!node) {
+            return new TreeNode(x);
+        }
+
+        if (x < node->val) {
+            node->left = nodeInsert(node->left, x);
+        }
+        else if (x > node->val) {
+            node->right = nodeInsert(node->right, x);
+        }
+        return node;
+    }
+    void printRecursive(TreeNode* node) {
+        if (!node) { return; }
+        printRecursive(node->left);
+        cout << node->val << " ";
+        printRecursive(node->right);
+    }
+public:
+    Tree() : head(nullptr) {}
+    void add(int x) {
+        head = nodeInsert(head, x);
+    }
+
+    void print() {
+        printRecursive(head);
+    }
+
+    bool remove(int x) {
+
+    }
+};
 #endif
