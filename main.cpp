@@ -103,18 +103,34 @@ void unitThreeImplementation() {
 
 void unitFourImplementation() {
   cout << "UNIT 4\n";
-  cout << "Inheritance\n";
+  cout << "----------------\n" << "Inheritance\n" << "----------------\n";
   const char* name = "Joxquin";
   Vehicle vehicle(29, name);
   Car* car = new Car(28, name, 1000);
-  Vehicle* vehicle2 = car;
 
   vehicle.showData();
   car->showData();
 
   delete car;
-  cout << "----------------\n";
-  cout << "Polymorphism\n";
+  cout << "\n----------------\n" << "Polymorphism\n" << "----------------\n";
+  cout << "Animal is an abstract class that can be used to implement polymorphism\n";
+  Dog dog;
+  Cat cat;
 
+  Animal* animal = &dog;
+  animal->sound();
 
+  animal = &cat;
+  animal->sound();
+
+  cout << "\n----------------\n" << "Friendship\n" << "----------------\n";
+  cout << "A teacher class can access to the student private attibutes\n";
+
+  Teacher teacher(50000);
+  Student student(10, "Joaquín");
+
+  teacher.getStudentNote(&student);
+
+  cout<< "The function presentStudent() also can access the student private attibutes\n";
+  presentStudent(&student);
 }

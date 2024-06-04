@@ -53,7 +53,7 @@ public:
     };
 
     void showData() const {
-        char * name = this->get_name() ;
+        char* name = this->get_name();
         cout << "CAR - " << " Age: " << this->get_age() << ", Name: " << name << ", Salary: " << salary << "\n";
         delete[] name;
     };
@@ -64,5 +64,62 @@ public:
 private:
     int salary;
 };
+
+// POLYMORPHISM
+class Animal {
+public:
+    Animal() {};
+
+    virtual void sound() const = 0;
+};
+
+class Dog : public Animal {
+public:
+    void sound() const {
+        cout << "Bark\n";
+    };
+
+    Dog() : Animal() {};
+};
+
+class Cat : public Animal {
+public:
+    void sound() const {
+        cout << "Meow\n";
+    };
+
+    Cat() : Animal() {};
+};
+
+// FRIENDSHIP
+class Student {
+private:
+    int note;
+    char name[20];
+public:
+    Student(const int n, const  char* nm) : note(n) {
+        strcpy(this->name, nm);
+    };
+
+    friend class Teacher;
+    friend void presentStudent(const Student*);
+};
+
+class Teacher {
+private:
+    int salary;
+public:
+    Teacher(const int s) : salary(s) {};
+
+    void getStudentNote(const Student* s) {
+        cout << s->name << " - " << s->note << "\n";
+    }
+
+    // friend class student;
+};
+
+void presentStudent(const Student* s) {
+    cout << "Hi, My name is " << s->name << " & my note is " << s->note << "\n";
+}
 
 #endif
