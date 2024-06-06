@@ -6,11 +6,13 @@
 #include <unit2.h>
 #include <unit3.h>
 #include <unit4n5.h>
+#include <unit6.h>
 
 void unitOneImplementation();
 void unitTwoImplementation();
 void unitThreeImplementation();
-void unitFourImplementation();
+void unitFourFiveImplementation();
+void unitSixImplementation();
 
 using namespace std;
 
@@ -28,8 +30,13 @@ int main()
   // unitThreeImplementation();
   // unitThreeExercises();
 
-  // * UNIT 4
-  unitFourImplementation();
+  // * UNIT 4 and 5
+  // unitFourFiveImplementation();
+  // unitFourFiveExercises();
+
+  // * UNIT 6
+  unitSixImplementation();
+
 
   return 0;
 }
@@ -101,7 +108,7 @@ void unitThreeImplementation() {
   }
 };
 
-void unitFourImplementation() {
+void unitFourFiveImplementation() {
   cout << "UNIT 4\n";
   cout << "----------------\n" << "Inheritance\n" << "----------------\n";
   {
@@ -181,4 +188,35 @@ void unitFourImplementation() {
   t->add(4);
   t->add(5);
   t->print();
+}
+
+void unitSixImplementation() {
+  cout << "UNIT 6\n";
+  cout << "----------------\n" << "OPERATORS OVERLOAD\n" << "----------------\n";
+  PointClass pc1 = PointClass(10, 10);
+  PointClass pc2 = PointClass(4, 4);
+  PointClass pc3 = PointClass(10, 10);
+  PointClass pc4 = PointClass(10, 11);
+
+  cout << "punto 1: " << pc1 << endl;
+  cout << "punto 2: " << pc2 << endl;
+  cout << "punto 3: " << pc3 << endl;
+  cout << "punto 4: " << pc4 << endl;
+  cout << endl << "p1 + p2: " << (pc1 + pc2) << endl;
+  const char* equals1 = (pc1 == pc3) ? "Si" : "No";
+  cout << "p1 == p3: " << equals1 << endl;
+  const char* equals2 = (pc1 == pc4) ? "Si" : "No";
+  cout << "p1 == p4: " << equals2 << endl;
+
+  cout << "\n----------------\n" << "STRING CLASS\n" << "----------------\n";
+  
+
+  cout << "\n----------------\n" << "EXCEPTIONS (TRY/CATCH)\n" << "----------------\n";
+  char confirm = 'y';
+  while (confirm != 'n')
+  {
+    mayFail();
+    cout << "Do you want to try again? (y/n): ";
+    cin >> confirm;
+  }
 }
