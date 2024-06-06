@@ -286,8 +286,6 @@ public:
         printRecursive(head);
     }
 
-    bool remove(int x) {
-
-    }
+    // bool remove(int x) { }
 };
 #endif
