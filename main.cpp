@@ -13,6 +13,7 @@ void unitTwoImplementation();
 void unitThreeImplementation();
 void unitFourFiveImplementation();
 void unitSixImplementation();
+void unitSevenImplementation();
 
 using namespace std;
 
@@ -36,6 +37,9 @@ int main()
 
   // * UNIT 6
   unitSixImplementation();
+
+  // * UNIT 7
+  unitSevenImplementation();
 
 
   return 0;
@@ -219,4 +223,8 @@ void unitSixImplementation() {
     cout << "Do you want to try again? (y/n): ";
     cin >> confirm;
   }
+}
+
+void unitSevenImplementation() {
+
 }

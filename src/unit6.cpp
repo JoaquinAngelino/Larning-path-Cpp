@@ -1,6 +1,7 @@
 #include <unit6.h>
 #include <iostream>
 #include <string>
+#include <limits>
 
 using namespace std;
 
@@ -25,10 +26,10 @@ void PointClass::print() const {
 
 float division(int numerador, int denominador) {
     if (denominador == 0) {
-        throw std::runtime_error("Error: división por cero");
+        throw runtime_error("Error: división por cero");
     }
     if (numerador < 0) {
-        throw std::invalid_argument("Error: numerador negativo");
+        throw invalid_argument("Error: numerador negativo");
     }
     return static_cast<float>(numerador) / denominador;
 }
@@ -36,22 +37,26 @@ float division(int numerador, int denominador) {
 void mayFail() {
     int numerador, denominador;
 
-    std::cout << "Ingrese el numerador: ";
-    std::cin >> numerador;
-    std::cout << "Ingrese el denominador: ";
-    std::cin >> denominador;
+    cout << "Ingrese el numerador: ";
+    cin >> numerador;
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cout << "Ingrese el denominador: ";
+    cin >> denominador;
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     try {
         float resultado = division(numerador, denominador);
-        std::cout << "El " << numerador << "/" << denominador << " = " << resultado << std::endl;
+        cout << "El " << numerador << "/" << denominador << " = " << resultado << endl;
     }
-    catch (const std::runtime_error& e) {
-        std::cerr << "Se ha producido una excepción de tiempo de ejecución: " << e.what() << std::endl;
+    catch (const runtime_error& e) {
+        cerr << "Se ha producido una excepción de tiempo de ejecución: " << e.what() << endl;
     }
-    catch (const std::invalid_argument& e) {
-        std::cerr << "Se ha producido una excepción de argumento inválido: " << e.what() << std::endl;
+    catch (const invalid_argument& e) {
+        cerr << "Se ha producido una excepción de argumento inválido: " << e.what() << endl;
     }
     catch (...) {
-        std::cerr << "Se ha producido una excepción desconocida " << std::endl;
+        cerr << "Se ha producido una excepción desconocida " << endl;
     }
 }
 
@@ -73,8 +78,8 @@ void stringsHandler() {
     s3.append(" " + s2);
     cout << "s3.append s2: " << s3 << endl;
 
-    std::cout << "string s3 iterator: ";
+    cout << "string s3 iterator: ";
     for (auto it = s3.begin(); it != s3.end(); ++it) {
-        std::cout << *it << " ";
+        cout << *it << " ";
     }
 }
