@@ -22,4 +22,7 @@ public:
 float division(int,int);
 void mayFail();
 
+// STRING CLASS
+void stringsHandler();
+
 #endif

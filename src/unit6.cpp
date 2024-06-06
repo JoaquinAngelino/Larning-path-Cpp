@@ -1,5 +1,6 @@
 #include <unit6.h>
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -55,4 +56,25 @@ void mayFail() {
 }
 
 // * --------------------
+// * STRING CLASS
 
+void stringsHandler() {
+    string s1 = "Hola mundo";
+    string s2(10, 'f');
+    string s3 = "Hola mundo";
+    cout << "s1: " << s1 << ", size: " << s1.size() << ", length: " << s1.length() << endl;
+    cout << "s2: " << s2 << endl;
+    cout << "s3: " << s3 << endl;
+    cout << "s1 == s2 = " << (s1 == s2) << endl;
+    cout << "s1 == s3 = " << (s1 == s3) << endl;
+
+    s1.clear();
+    cout << "s1: " << s1 << ", is empty: " << s1.empty() << endl;
+    s3.append(" " + s2);
+    cout << "s3.append s2: " << s3 << endl;
+
+    std::cout << "string s3 iterator: ";
+    for (auto it = s3.begin(); it != s3.end(); ++it) {
+        std::cout << *it << " ";
+    }
+}

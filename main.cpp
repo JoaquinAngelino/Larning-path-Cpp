@@ -209,7 +209,7 @@ void unitSixImplementation() {
   cout << "p1 == p4: " << equals2 << endl;
 
   cout << "\n----------------\n" << "STRING CLASS\n" << "----------------\n";
-  
+  stringsHandler();
 
   cout << "\n----------------\n" << "EXCEPTIONS (TRY/CATCH)\n" << "----------------\n";
   char confirm = 'y';
