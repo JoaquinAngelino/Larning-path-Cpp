@@ -7,6 +7,7 @@
 #include <unit3.h>
 #include <unit4n5.h>
 #include <unit6.h>
+#include <unit7.h>
 
 void unitOneImplementation();
 void unitTwoImplementation();
@@ -36,7 +37,7 @@ int main()
   // unitFourFiveExercises();
 
   // * UNIT 6
-  unitSixImplementation();
+  // unitSixImplementation();
 
   // * UNIT 7
   unitSevenImplementation();
@@ -226,5 +227,9 @@ void unitSixImplementation() {
 }
 
 void unitSevenImplementation() {
-
+  // writeFile("This is a test text.\n");
+  // readFile();
+  // reverseReadFile();.
+  writeFileBin();
+  readFileBin();
 }
