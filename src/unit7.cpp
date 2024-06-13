@@ -36,10 +36,10 @@ void reverseReadFile() {
     ifstream inFile("./files/testFile.txt", ios::binary | ios::ate);
 
     if (inFile.is_open()) {
-        streampos end = inFile.tellg();
+        streampos end = inFile.tellg() - (streampos)1;
         cout << "position of g: " << inFile.tellg() << endl;
         char c;
-        for (int i = end - 1; i >= -1; i--) {
+        for (int i = end; i >= -1; i--) {
             inFile.seekg(i);
             inFile.get(c);
             cout << c;
@@ -55,7 +55,10 @@ void writeFileBin() {
     if (outFile.is_open()) {
         Data d[3];
 
-        char* names[] = { "joaquín", "Angelino 123 123", "Corona" };
+        char name1[] = "joaquín";
+        char name2[] = "Angelino 123 123";
+        char name3[] = "Corona";
+        char* names[] = { name1, name2 ,name3 };
         for (int i = 0; i < 3; i++)
         {
             Data aux = { (int)i, (float)i, names[i] };
