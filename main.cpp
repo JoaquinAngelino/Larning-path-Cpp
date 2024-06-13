@@ -8,6 +8,7 @@
 #include <unit4n5.h>
 #include <unit6.h>
 #include <unit7.h>
+#include <unit9.h>
 
 void unitOneImplementation();
 void unitTwoImplementation();
@@ -15,6 +16,7 @@ void unitThreeImplementation();
 void unitFourFiveImplementation();
 void unitSixImplementation();
 void unitSevenImplementation();
+void unitNineImplementation();
 
 using namespace std;
 
@@ -40,7 +42,10 @@ int main()
   // unitSixImplementation();
 
   // * UNIT 7
-  unitSevenImplementation();
+  // unitSevenImplementation();
+
+  // * UNIT 9
+  unitNineImplementation();
 
 
   return 0;
@@ -232,4 +237,23 @@ void unitSevenImplementation() {
   // reverseReadFile();.
   writeFileBin();
   readFileBin();
+}
+
+void unitNineImplementation() {
+  cout << "\n----------------\n" << "UNIT 9\n" << "----------------\n";
+  cout << "\n----------------\n" << "GENERIC FUNCTIONS\n" << "----------------\n";
+  char a[] = "hola";
+
+  genericPrint(1);
+  genericPrint("hola");
+  genericPrint(a);
+  genericPrint(21.09f);
+
+  GenericClass aux1(20);
+  GenericClass aux2(20.131f);
+  GenericClass aux3("hola");
+  
+  aux1.print();
+  aux2.print();
+  aux3.print();
 }
