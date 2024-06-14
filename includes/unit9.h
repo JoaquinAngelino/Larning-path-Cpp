@@ -2,6 +2,8 @@
 #define UNIT9_H
 #include <iostream>
 #include <typeinfo>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
@@ -66,7 +68,7 @@ public:
 };
 
 
-// SPECIFIC INHERITANCE
+// INHERITANCE SPECIALIZATION
 template<>
 class Derived<int, float> : public Base<int, float> {
 public:
@@ -77,6 +79,10 @@ public:
     }
 };
 
+
+// STANDARD TEMPLATE LIBRARY
+
+void vectorsImplementation();
 
 
 #endif //UNIT9_H

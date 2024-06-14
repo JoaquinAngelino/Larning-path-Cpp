@@ -250,6 +250,7 @@ void unitNineImplementation() {
   genericPrint(a);
   genericPrint(21.09f);
 
+  cout << "\n----------------\n" << "GENERIC CLASS\n" << "----------------\n";
   GenericClass aux1(20);
   GenericClass aux2(20.131f);
   GenericClass aux3("hola");
@@ -260,6 +261,7 @@ void unitNineImplementation() {
   aux3.print();
   aux4.print();
 
+  cout << "\n----------------\n" << "GENERIC CLASS INHERITANCE\n" << "----------------\n";
   Base<int, int>* baseClass = new Base(10, 20);
 
   baseClass->print();
@@ -272,4 +274,7 @@ void unitNineImplementation() {
   delete basePtr;
   delete basePtr2;
   delete baseClass;
+  cout << "\n----------------\n" << "STANDARD TEMPLATE LIBRARY\n" << "----------------\n";
+
+  vectorsImplementation();
 }
