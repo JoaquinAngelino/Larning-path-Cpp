@@ -243,6 +243,7 @@ void unitNineImplementation() {
   cout << "\n----------------\n" << "UNIT 9\n" << "----------------\n";
   cout << "\n----------------\n" << "GENERIC FUNCTIONS\n" << "----------------\n";
   char a[] = "hola";
+  notPrintable s = { "Juanito", 29 };
 
   genericPrint(1);
   genericPrint("hola");
@@ -252,8 +253,23 @@ void unitNineImplementation() {
   GenericClass aux1(20);
   GenericClass aux2(20.131f);
   GenericClass aux3("hola");
-  
+  GenericClass aux4(s);
+
   aux1.print();
   aux2.print();
   aux3.print();
+  aux4.print();
+
+  Base<int, int>* baseClass = new Base(10, 20);
+
+  baseClass->print();
+  Base<int, float>* basePtr = new Derived(10, 20.1f);
+  Base<int, int>* basePtr2 = new Derived(10, 20);
+
+  basePtr->print();
+  basePtr2->print();
+
+  delete basePtr;
+  delete basePtr2;
+  delete baseClass;
 }
